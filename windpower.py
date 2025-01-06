@@ -5,10 +5,6 @@ import joblib
 # Load the trained model
 model = joblib.load('windpower_model_compressed.pkl.gz')
 
-# #Load the trained model from GitHub
-# url = 'https://github.com/ntaboisoe/wind_power_prediction/blob/main/windpower_model_compressed.pkl.gz'
-
-
 # Define the input features for the user
 st.title("Wind Power Prediction")
 
@@ -23,7 +19,7 @@ winddirection_10m = st.slider('Wind Direction at 10m (degrees)', min_value=0, ma
 winddirection_100m = st.slider('Wind Direction at 100m (degrees)', min_value=0, max_value=360, value=180, step=1)
 windgusts_10m = st.slider('Wind Gusts at 10m (m/s)', min_value=0.0, max_value=40.0, value=15.0, step=0.1)
 
-# Convert the inputs into a DataFrame (you may scale/normalize them if needed)
+# Convert the inputs into a DataFrame
 input_data = pd.DataFrame({
     'windspeed_10m': [windspeed_10m],
     'windspeed_100m': [windspeed_100m],
